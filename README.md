@@ -1,6 +1,7 @@
 # atomicf
 
 [![version](https://img.shields.io/github/release/arturalbov/atomicf.svg)](https://github.com/arturalbov/atomicf/releases/latest)
+[![Coverage Status](https://coveralls.io/repos/github/arturalbov/atomicf/badge.svg?branch=master)](https://coveralls.io/github/arturalbov/atomicf?branch=master)
 [![LoC](https://tokei.rs/b1/github/arturalbov/atomicf)](https://github.com/arturalbov/atomicf)
 [![license](https://img.shields.io/github/license/arturalbov/atomicf.svg)](https://github.com/arturalbov/atomicf/blob/master/LICENSE)
 [![contributors](https://img.shields.io/github/contributors/arturalbov/atomicf.svg)](https://github.com/arturalbov/atomicf/graphs/contributors)
