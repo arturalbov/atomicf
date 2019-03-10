@@ -20,7 +20,7 @@ func TestAtomicFile_CreateWrite(t *testing.T) {
 	defer os.RemoveAll(dir)
 
 	fileName := filepath.Join(dir, "atomic-test")
-	atomic, err := OpenFile(fileName, os.O_CREATE|os.O_SYNC|os.O_APPEND|os.O_WRONLY, 0666)
+	atomic, err := OpenFile(fileName, os.O_CREATE|os.O_SYNC|os.O_WRONLY, 0666)
 
 	if err != nil {
 		t.Errorf("error open atomic file %s: %v", fileName, err)
@@ -64,7 +64,7 @@ func TestAtomicFile_WriteAt(t *testing.T) {
 		t.Fatalf("error creating test atomic file: %v", err)
 	}
 
-	atomic, err := OpenFile(fileName, os.O_CREATE|os.O_SYNC|os.O_APPEND|os.O_WRONLY, 0666)
+	atomic, err := OpenFile(fileName, os.O_CREATE|os.O_SYNC|os.O_WRONLY, 0666)
 	if err != nil {
 		t.Errorf("error open atomic file %s: %v", fileName, err)
 		return
@@ -120,7 +120,7 @@ func TestAtomicFile_Recover(t *testing.T) {
 		t.Fatalf("error creating test atomic file: %v", err)
 	}
 
-	atomic, err := OpenFile(filepath.Join(dir, atomicFileName), os.O_CREATE|os.O_SYNC|os.O_APPEND|os.O_WRONLY, 0666)
+	atomic, err := OpenFile(filepath.Join(dir, atomicFileName), os.O_CREATE|os.O_SYNC|os.O_WRONLY, 0666)
 	if err != nil {
 		t.Errorf("error open atomic file %s: %v", logFileName, err)
 		return

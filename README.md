@@ -6,7 +6,7 @@
 [![license](https://img.shields.io/github/license/arturalbov/atomicf.svg)](https://github.com/arturalbov/atomicf/blob/master/LICENSE)
 [![contributors](https://img.shields.io/github/contributors/arturalbov/atomicf.svg)](https://github.com/arturalbov/atomicf/graphs/contributors)
 [![contribute](https://img.shields.io/badge/contributions-welcome-orange.svg)](https://github.com/arturalbov/atomicf/graphs/contributors)
-[![telegram](https://img.shields.io/badge/Telegram-%40arturalbov-blue.svg?style=social&logo=telegram)](https://t.me/username)
+[![telegram](https://img.shields.io/badge/Telegram-%40arturalbov-blue.svg?style=social&logo=telegram)](https://t.me/arturalbov)
 
 ```$xslt
 import "github.com/arturalbov/atomicf"
