@@ -57,7 +57,38 @@ func (file *AtomicFile) Write(p []byte) (n int, err error) {
 		return
 	}
 
-	return file.writeLog(p, fileInfo.Size())
+	logFileName, err := file.logOperation(p, fileInfo.Size())
+	if err != nil {
+		return
+	}
+
+	var dir *os.File
+	if dir, err = os.Open(file.dir()); err != nil {
+		return
+	}
+	defer dir.Close()
+
+	if err = dir.Sync(); err != nil {
+		return
+	}
+
+	if n, err = file.File.Write(p); err != nil {
+		return
+	}
+
+	if err = file.File.Sync(); err != nil {
+		return
+	}
+
+	if err = os.Remove(logFileName); err != nil {
+		return
+	}
+
+	if err = dir.Sync(); err != nil {
+		return
+	}
+
+	return
 }
 
 func (file *AtomicFile) WriteAt(b []byte, off int64) (n int, err error) {
@@ -74,7 +105,6 @@ func (file *AtomicFile) writeLog(b []byte, off int64) (n int, err error) {
 }
 
 func (file *AtomicFile) writePostLog(logFileName string, data []byte, offset int64) (n int, err error) {
-
 	var dir *os.File
 	if dir, err = os.Open(file.dir()); err != nil {
 		return
